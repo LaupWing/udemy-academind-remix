@@ -9,7 +9,9 @@ const NotesPage = () => {
 }
 export default NotesPage
 
-export function action() {
+export async function action({ request }) {
+   const formData = await request.formData()
+   const noteData = Object.fromEntries(formData)
    
 }
 
