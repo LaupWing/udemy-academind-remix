@@ -1,5 +1,7 @@
 import { Link } from "@remix-run/react"
 
+import styles from "~/styles/note-details.css"
+
 const NoteDetailsPage = () => {
    return (
       <main id="note-details">
@@ -14,3 +16,12 @@ const NoteDetailsPage = () => {
    )
 }
 export default NoteDetailsPage
+
+export function links() {
+   return [
+      {
+         rel: "stylesheet",
+         href: styles
+      }
+   ]
+}
