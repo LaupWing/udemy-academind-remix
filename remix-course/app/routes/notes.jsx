@@ -1,4 +1,4 @@
-import NewNote from "../components/NewNote"
+import NewNote, {links as newNoteLinks} from "../components/NewNote"
 
 const NotesPage = () => {
    return (
@@ -8,3 +8,9 @@ const NotesPage = () => {
    )
 }
 export default NotesPage
+
+export function links(){
+   return [
+      ...newNoteLinks()
+   ]
+}
