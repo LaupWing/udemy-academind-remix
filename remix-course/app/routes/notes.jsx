@@ -18,6 +18,14 @@ export default NotesPage
 
 export async function loader() {
    const notes = await getStoredNotes()
+   if(!notes || notes.length === 0){
+      throw json({
+         message: "Could not find any notes."
+      }, {
+         status: 404,
+         statusText: "Not Found"
+      })
+   }
 
    return json(notes)
 }
