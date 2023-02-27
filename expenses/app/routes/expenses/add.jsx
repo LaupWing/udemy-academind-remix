@@ -1,4 +1,6 @@
+import ExpenseForm from "~/components/expenses/ExpenseForm"
+
 const AddExpensesPage = () => {
-   return <div>AddExpensesPage</div>
+   return (<ExpenseForm />)
 }
 export default AddExpensesPage
