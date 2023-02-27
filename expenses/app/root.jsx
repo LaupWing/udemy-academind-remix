@@ -31,3 +31,12 @@ export default function App() {
       </html>
    )
 }
+
+export function links() {
+   return [
+      {
+         rel: "stylesheet",
+         href: sharedStyles
+      }
+   ]
+}
