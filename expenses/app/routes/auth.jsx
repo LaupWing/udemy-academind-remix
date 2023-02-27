@@ -1,7 +1,10 @@
 import authStyles from "~/styles/auth.css"
+import AuthForm from "../components/auth/AuthForm"
 
 const AuthPage = () => {
-   return <div>AuthPage</div>
+   return (
+      <AuthForm />
+   )
 }
 export default AuthPage
 
