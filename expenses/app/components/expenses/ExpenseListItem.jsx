@@ -13,7 +13,7 @@ function ExpenseListItem({ id, title, amount }) {
          </div>
          <menu className="expense-actions">
             <button onClick={deleteExpenseItemHandler}>Delete</button>
-            <Link href={`/expenses/${id}`}>Edit</Link>
+            <Link href={id}>Edit</Link>
          </menu>
       </article>
    )
