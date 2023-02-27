@@ -30,6 +30,13 @@ export async function loader() {
    return json(notes)
 }
 
+export function meta(){
+   return {
+      title: "All Notes",
+      description: "Manage your notes with ease"
+   }
+}
+
 export async function action({ request }) {
    const formData = await request.formData()
    const noteData = Object.fromEntries(formData)
