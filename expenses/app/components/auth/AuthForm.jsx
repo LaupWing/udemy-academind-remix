@@ -1,5 +1,5 @@
 import { Link, useSearchParams } from "@remix-run/react"
-import { FaLock } from "react-icons/fa"
+import { FaLock, FaUserPlus } from "react-icons/fa"
 
 function AuthForm() {
    const [searchParams] = useSearchParams()
@@ -11,7 +11,7 @@ function AuthForm() {
    return (
       <form method="post" className="form" id="auth-form">
          <div className="icon-img">
-            <FaLock />
+            {authMode === "login" ?  <FaLock /> : <FaUserPlus />}
          </div>
          <p>
             <label htmlFor="email">Email Address</label>
