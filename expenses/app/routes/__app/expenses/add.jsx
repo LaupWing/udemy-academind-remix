@@ -3,6 +3,7 @@ import { useNavigate } from "@remix-run/react"
 import ExpenseForm from "~/components/expenses/ExpenseForm"
 import Modal from "~/components/util/Modal"
 import { addExpense } from "~/data/expenses.server"
+import { validateExpenseInput } from "~/data/validation.server"
 
 const AddExpensesPage = () => {
    const navigate = useNavigate()
@@ -22,7 +23,12 @@ export default AddExpensesPage
 export async function action({ request }){
    const formData = await request.formData()
    const expenseData = Object.fromEntries(formData)
-   await addExpense(expenseData)
+   try{
+      validateExpenseInput(expenseData)   
+   }catch(err){
+      return err
+   }
 
+   await addExpense(expenseData)
    return redirect("/expenses")
 }
