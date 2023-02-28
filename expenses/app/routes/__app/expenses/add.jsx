@@ -16,3 +16,7 @@ const AddExpensesPage = () => {
    )
 }
 export default AddExpensesPage
+
+export async function action(){
+   
+}
