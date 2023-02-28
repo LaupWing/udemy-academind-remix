@@ -1,4 +1,3 @@
-const ExpensesRawPage = () => {
-   return <div>ExpensesRawPage</div>
+export function loader() {
+   
 }
-export default ExpensesRawPage
