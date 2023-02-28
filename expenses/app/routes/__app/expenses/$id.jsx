@@ -16,3 +16,8 @@ const UpdateExpensesPage = () => {
    )
 }
 export default UpdateExpensesPage
+
+async function loader({ params }) {
+   const expenseId = params.id
+   
+}
