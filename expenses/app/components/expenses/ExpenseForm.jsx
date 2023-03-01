@@ -56,7 +56,7 @@ function ExpenseForm() {
                   name="date" 
                   max={today} 
                   required 
-                  defaultValue={defaultValues.date}
+                  defaultValue={defaultValues.date ? defaultValues.date.slice(0, 10) : ""}
                />
             </p>
          </div>
