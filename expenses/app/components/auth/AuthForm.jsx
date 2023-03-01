@@ -9,7 +9,7 @@ function AuthForm() {
    const toggleBtnCaption = authMode === "login" ? "Create a new user": "Login with existing user"
 
    return (
-      <form method="post" className="form" id="auth-form">
+      <Form method="post" className="form" id="auth-form">
          <div className="icon-img">
             {authMode === "login" ?  <FaLock /> : <FaUserPlus />}
          </div>
@@ -30,7 +30,7 @@ function AuthForm() {
             <button>{submitBtnCaption}</button>
             <Link to={`?mode=${mode}`}>{toggleBtnCaption}</Link>
          </div>
-      </form>
+      </Form>
    )
 }
 
