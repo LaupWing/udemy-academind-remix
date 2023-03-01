@@ -1,3 +1,4 @@
+import { json } from "@remix-run/node"
 import { useNavigate } from "@remix-run/react"
 import ExpenseForm from "~/components/expenses/ExpenseForm"
 import Modal from "~/components/util/Modal"
@@ -18,7 +19,9 @@ const UpdateExpensesPage = () => {
 }
 export default UpdateExpensesPage
 
-async function loader({ params }) {
+export async function loader({ params }) {
    const expenseId = params.id
-   getExpense(expenseId)
+   const expense = await getExpense(expenseId)
+   
+   return json(expense)
 }
