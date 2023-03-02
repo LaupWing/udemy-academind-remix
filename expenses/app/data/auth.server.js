@@ -24,6 +24,14 @@ async function createUserSession(userId, redirectPath) {
    })
 }
 
+export async function requireUserSession(request) {
+   const userId = getUserFromSession(request)
+
+   if(!userId){
+      throw redirect("/auth?mode=login")
+   }
+}
+
 export async function getUserFromSession(request) {
    const session = await sessionStorage.getSession(request.headers.get("Cookie"))
 
