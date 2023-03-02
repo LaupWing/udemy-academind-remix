@@ -54,3 +54,10 @@ export function meta() {
       title: "RemixExpenses - The Complete app"
    }
 }
+
+
+export function headers(){
+   return {
+      "Cache-Control": "max-age=3600"
+   }
+}
