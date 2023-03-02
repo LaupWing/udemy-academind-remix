@@ -13,5 +13,10 @@ export async function signup({email, password}) {
       throw error
    }
 
-   prisma.user.create()
+   prisma.user.create({
+      data: {
+         email,
+         password
+      }
+   })
 }
