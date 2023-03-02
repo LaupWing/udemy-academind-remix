@@ -1,5 +1,7 @@
+import { redirect } from "@remix-run/node"
 import authStyles from "~/styles/auth.css"
 import AuthForm from "../../components/auth/AuthForm"
+import { signup } from "../../data/auth.server"
 import { validateCredentials } from "../../data/validation.server"
 
 const AuthPage = () => {
@@ -31,10 +33,18 @@ export async function action({ request }) {
    }catch(e){
       return e
    }
-
-   if(authMode === "login"){
-
-   }else {
-
+   try{
+      if(authMode === "login"){
+   
+      }else {
+         await signup(credentials)
+         return redirect("/expenses")
+      }
+   }catch(e){
+      if(e.status === 422){
+         return {
+            credentials: e.message
+         }
+      }
    }
 }
