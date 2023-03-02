@@ -61,3 +61,7 @@ export function headers(){
       "Cache-Control": "max-age=3600"
    }
 }
+
+export const handle = {
+   disableJs: true
+}
