@@ -54,3 +54,13 @@ export async function action({ params, request }) {
       return redirect("/expenses")
    }
 }
+
+export const meta = ({params, location, parentsData}) => {
+   const expense = parentsData["routes/__app/expenses"].find(expense => expense.id === params.id)
+
+
+   return {
+      title: expense.title,
+      description: "Update expense"
+   }
+}
